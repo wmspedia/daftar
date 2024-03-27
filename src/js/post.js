@@ -1,5 +1,5 @@
 
-function PostData(firstname,lastname,phone,username,email,password){
+function PostData(firstname,lastname,phone,username,email,password,privilege){
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     
@@ -9,7 +9,8 @@ function PostData(firstname,lastname,phone,username,email,password){
         "username": username,
         "phone": phone,
         "email": email,
-        "password": password
+        "password": password,
+        "privilege": privilege
       });
     
     const requestOptions = {
@@ -42,7 +43,8 @@ function SubmitBtn(){
     username=document.getElementById("username").value;
     email=document.getElementById("email").value;
     password=document.getElementById("password").value;
-    PostData(firstname,lastname,phone,username,email,password);
+    privilege=document.getElementById("privilege").value;
+    PostData(firstname,lastname,phone,username,email,password,privilege);
 }
     
     
